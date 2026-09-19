@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-offwhite text-navy antialiased;
+  }
+}
+
+/* Leaflet needs an explicit height on its container */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #cfe8e6;
+  z-index: 0;
+}
+
+/* Custom map pin styling */
+.cleanspot-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.cleanspot-pin-inner {
+  transform: rotate(45deg);
+  font-size: 14px;
+  font-weight: bold;
+}
+.cleanspot-pin-toilet {
+  background: #028090;
+}
+.cleanspot-pin-water {
+  background: #00a896;
+}
+.cleanspot-pin-maintenance {
+  background: #f0a93c;
+}
+.cleanspot-pin-locked {
+  background: #b0453e;
+}
+
+/* Hide scrollbars on the horizontal filter chip row */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth fade-in for modals and cards */
+@keyframes cleanspot-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: cleanspot-fade-in 0.25s ease-out;
+}
+
+@keyframes cleanspot-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: cleanspot-slide-up 0.3s ease-out;
+}
