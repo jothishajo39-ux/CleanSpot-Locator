@@ -177,13 +177,39 @@ Defined in `tailwind.config.js`.
 
 ---
 
-## Running the App
+## Deploying to Vercel / Netlify
 
-```bash
-npm install
-npm run dev
-```
+This is a static SPA (single-page app) — no server to run, just build
+and host the `dist/` folder.
 
-The Supabase credentials are pre-configured in `.env`. The database
-schema and seed data are applied automatically via the Supabase
-migration tool during setup.
+### Vercel
+
+1. Push this project to a GitHub repo.
+2. Go to [vercel.com](https://vercel.com) → "Add New Project" → import the repo.
+3. **Framework Preset:** Vite
+4. **Build Command:** `npm run build`
+5. **Output Directory:** `dist`
+6. **Environment Variables** — add these two (critical, or the app shows a blank screen):
+   - `VITE_SUPABASE_URL` → your Supabase project URL
+   - `VITE_SUPABASE_ANON_KEY` → your Supabase anon key
+7. Click **Deploy**.
+
+The `vercel.json` file (already included) handles SPA routing so all
+paths serve `index.html`.
+
+### Netlify
+
+1. Push to GitHub → connect repo in Netlify.
+2. **Build Command:** `npm run build`
+3. **Publish Directory:** `dist`
+4. **Environment Variables:** same two `VITE_SUPABASE_*` vars.
+5. The `public/_redirects` file (already included) handles SPA routing.
+
+### Important: Environment Variables
+
+The `.env` file is in `.gitignore` and will NOT be pushed to GitHub.
+You MUST add the two `VITE_SUPABASE_*` variables in Vercel/Netlify's
+settings, or the app will crash on load with a blank screen.
+
+Copy the values from your local `.env` file (or `.env.example` as a
+template).
