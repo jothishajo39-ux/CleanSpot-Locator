@@ -9,7 +9,7 @@ Built for a college paper presentation competition — the code
 prioritizes **clean, explainable, well-commented logic** over polish.
 
 ---
-Live Demo Link:https://cleanspot-facility-l-n1yz.bolt.host
+Live Demo :https://cleanspot-facility-l-n1yz.bolt.host
 ## Tech Stack
 
 | Layer        | Technology                                    |
