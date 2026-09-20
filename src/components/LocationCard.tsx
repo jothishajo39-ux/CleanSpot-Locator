@@ -6,7 +6,6 @@ import {
   TAG_COLORS,
   STATUS_LABELS,
   STATUS_COLORS,
-  WATER_LABELS,
   TYPE_LABELS,
 } from '@/lib/display';
 import { TrustScoreBar } from './TrustScoreBar';
@@ -152,5 +151,3 @@ export function LocationCard({ location, onRate, onReportStatus, onSos, onSelect
   );
 }
 
-// Re-export the water labels type for convenience
-export { WATER_LABELS };

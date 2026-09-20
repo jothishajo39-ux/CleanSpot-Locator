@@ -1,4 +1,4 @@
-import type { Rating, LocationWithDetails, StatusReport } from './types';
+import type { Rating, LocationWithDetails, StatusReport, LocationType, LocationTag } from './types';
 import { haversineDistance } from './geo';
 
 // ---------------------------------------------------------------------------
@@ -129,7 +129,7 @@ export function isStatusExpired(
  * walk through during a viva.
  */
 export function enrichLocation(
-  location: { id: string; name: string; type: string; latitude: number; longitude: number; tags: string[]; created_by_session: string | null; created_at: string },
+  location: { id: string; name: string; type: LocationType; latitude: number; longitude: number; tags: LocationTag[]; created_by_session: string | null; created_at: string },
   ratings: Rating[],
   statusReports: StatusReport[],
   userLat: number | null,

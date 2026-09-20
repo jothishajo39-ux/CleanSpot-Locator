@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { computeTrustScore, isStatusExpired, STATUS_EXPIRY_HOURS } from '@/lib/trustScore';
+import { STATUS_EXPIRY_HOURS } from '@/lib/trustScore';
 import type { Location, Rating, StatusReport, LocationWithDetails } from '@/lib/types';
 import { enrichLocation } from '@/lib/trustScore';
 import {
   AlertTriangle,
   Lock,
-  DropletOff,
+  Ban,
   TrendingUp,
   BarChart3,
   MapPin,
@@ -218,7 +218,7 @@ export function DashboardPage() {
                     <p className="text-xs text-amber-700">{issue}</p>
                   </div>
                   {loc.latestStatus!.water_available === 'false' && (
-                    <DropletOff size={18} className="text-coral-500" />
+                    <Ban size={18} className="text-coral-500" />
                   )}
                   {loc.latestStatus!.status === 'locked' && (
                     <Lock size={18} className="text-coral-500" />

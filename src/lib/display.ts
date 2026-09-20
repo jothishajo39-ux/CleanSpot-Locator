@@ -8,7 +8,7 @@ import {
   Droplet,
   Droplets,
   Accessibility,
-  Women,
+  Users,
   IndianRupee,
   Heart,
 } from 'lucide-react';
@@ -26,7 +26,7 @@ export const TAG_LABELS: Record<LocationTag, string> = {
 };
 
 export const TAG_ICONS: Record<LocationTag, LucideIcon> = {
-  women_friendly: Women,
+  women_friendly: Users,
   free: Heart,
   paid: IndianRupee,
   wheelchair_accessible: Accessibility,

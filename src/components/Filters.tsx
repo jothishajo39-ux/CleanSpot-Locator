@@ -1,4 +1,4 @@
-import { Toilet, Droplets, Heart, IndianRupee, Accessibility, Women } from 'lucide-react';
+import { Bath, Droplets, Heart, IndianRupee, Accessibility, Users } from 'lucide-react';
 import type { LocationType, LocationTag } from '@/lib/types';
 
 // ---------------------------------------------------------------------------
@@ -21,14 +21,14 @@ interface FiltersProps {
   onChange: (filters: FilterState) => void;
 }
 
-const TYPE_OPTIONS: { value: 'all' | LocationType; label: string; icon: typeof Toilet }[] = [
-  { value: 'all', label: 'All', icon: Toilet },
-  { value: 'toilet', label: 'Toilets', icon: Toilet },
+const TYPE_OPTIONS: { value: 'all' | LocationType; label: string; icon: typeof Bath }[] = [
+  { value: 'all', label: 'All', icon: Bath },
+  { value: 'toilet', label: 'Toilets', icon: Bath },
   { value: 'water_atm', label: 'Water ATMs', icon: Droplets },
 ];
 
 const TAG_OPTIONS: { value: LocationTag; label: string; icon: typeof Heart }[] = [
-  { value: 'women_friendly', label: 'Women-friendly', icon: Women },
+  { value: 'women_friendly', label: 'Women-friendly', icon: Users },
   { value: 'free', label: 'Free', icon: Heart },
   { value: 'paid', label: 'Paid', icon: IndianRupee },
   { value: 'wheelchair_accessible', label: 'Wheelchair', icon: Accessibility },
